@@ -1,6 +1,6 @@
 import {action, computed, observable} from 'mobx';
 
-export class Counter {
+export class Store {
   @observable count: number = 0
 
   @action increase() {

@@ -1,16 +1,13 @@
-import {observer} from 'mobx-react';
-import React from 'react'
-import {Counter} from './modal';
+import { observer } from 'mobx-react';
+import React, { useContext } from 'react'
+import { StoreContext } from './StoreContext';
 
-type Props = {
-  counter: Counter
-}
-
-function Hello({counter}: Props) {
+function Hello() {
+  const store = useContext(StoreContext);
   return <div>
-    <button onClick={() => counter.increase()}>+1</button>
-    <div>Count: {counter.count}</div>
-    <div>Double: {counter.double}</div>
+    <button onClick={() => store.increase()}>+1</button>
+    <div>Count: {store.count}</div>
+    <div>Double: {store.double}</div>
   </div>
 }
 
